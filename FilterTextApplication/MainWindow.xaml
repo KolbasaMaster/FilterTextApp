@@ -1,0 +1,60 @@
+﻿<Window x:Class="FilterTextApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:local="clr-namespace:FilterTextApplication"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="700">
+    <Grid RenderTransformOrigin="1,0.5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="22*"/>
+            <RowDefinition Height="11*"/>
+            <RowDefinition Height="22*"/>
+            <RowDefinition Height="343*"/>
+            <RowDefinition Height="11*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="22"/>
+            <ColumnDefinition Width="195*"/>
+            <ColumnDefinition Width="225*"/>
+            <ColumnDefinition Width="48*"/>
+            <ColumnDefinition Width="108*"/>
+            <ColumnDefinition Width="73*"/>
+            <ColumnDefinition Width="21*"/>
+        </Grid.ColumnDefinitions>
+        <Canvas HorizontalAlignment="Stretch" x:Name="buttonFile" Grid.Column="1" Margin="10,0,70,0"  Grid.Row="1" >
+            <Button x:Name="fileButton" MinWidth="76" Content ="Файл" MinHeight="22" HorizontalAlignment="Left" Width="103" Click="OpenFile" VerticalAlignment="Bottom" Height="3" Background="DeepSkyBlue" Foreground="Azure" FontSize="16" FontFamily="Arial" FontWeight="DemiBold"/>
+        </Canvas>
+        <Canvas HorizontalAlignment="Stretch" x:Name="buttonAccept" Grid.Column="1" Margin="10,0,70,0"  Grid.Row="3" >
+            <Button x:Name="filterButton" Content="Применить" HorizontalAlignment="Left" Width="103" MinWidth="76" MinHeight="22" VerticalAlignment="Bottom" Click="FilterButton_Click" Background="DeepSkyBlue" Foreground="Azure" FontSize="16" FontFamily="Arial" FontWeight="DemiBold" RenderTransformOrigin="0.511,0.848"/>
+        </Canvas>
+        <Canvas x:Name="filter1" Grid.Column="1" Margin="150,0,0,0"  HorizontalAlignment="Left" Width="180" Grid.Row="1" Grid.ColumnSpan="2">
+            <TextBox TextChanged="TextBox1_OnTextChanged" FontFamily="Arial" x:Name="textBox1" HorizontalAlignment="Right" Height="22" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="125" Canvas.Left="55"/>
+        </Canvas >
+        <Canvas x:Name ="filter3" Grid.Column="1" Margin="150,0,0,0" HorizontalAlignment="Left" Width="180" Grid.Row="3" Grid.ColumnSpan="2">
+            <ComboBox IsEnabled="False" SelectedIndex="2" x:Name="filterBox3" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="22">
+                <TextBlock FontFamily="Arial" FontWeight="DemiBold"><Run Text="И"/></TextBlock>
+                <TextBlock FontFamily="Arial" FontWeight="DemiBold"><Run Text="ИЛИ"/></TextBlock>
+            </ComboBox>
+            <TextBox TextChanged="TextBox3_OnTextChanged" IsEnabled ="False"  FontFamily="Arial" x:Name="textBox3" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="125" Canvas.Left="55" />
+        </Canvas>
+        <Canvas x:Name="filter2" Grid.Column="3" HorizontalAlignment="Left" Width="180" Grid.Row="1" Grid.ColumnSpan="3">
+            <ComboBox IsEnabled="False" SelectedIndex="2" x:Name="filterBox2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="22">
+                <TextBlock FontFamily="Arial" FontWeight="DemiBold"><Run Text="И"/></TextBlock>
+                <TextBlock FontFamily="Arial" FontWeight="DemiBold"><Run Text="ИЛИ"/></TextBlock>
+            </ComboBox>
+            <TextBox TextChanged="TextBox2_OnTextChanged" IsEnabled="False" FontFamily="Arial" x:Name="textBox2" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="125" Canvas.Left="55"/>
+        </Canvas>
+        <Canvas x:Name="filter4" Grid.Column="3" Margin="0,0,0,342" HorizontalAlignment="Left" Width="180" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="3">
+            <ComboBox IsEnabled="False" SelectedIndex="2" x:Name="filterBox4" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="23">
+                <TextBlock FontFamily="Arial" FontWeight="DemiBold"><Run Text="И"/></TextBlock>
+                <TextBlock FontFamily="Arial" FontWeight="DemiBold"><Run Text="ИЛИ"/></TextBlock>
+            </ComboBox>
+            <TextBox IsEnabled="False" FontFamily="Arial" x:Name="textBox4" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="125" Canvas.Left="55"/>
+        </Canvas>
+        <RichTextBox x:FieldModifier="public"  IsEnabled="True" AllowDrop="True" x:Name="richTextBox" Grid.Column="1" Margin="0,10" Grid.Row="4" RenderTransformOrigin="-1.682,-0.8" Grid.ColumnSpan="5" VerticalScrollBarVisibility ="Auto" HorizontalScrollBarVisibility="Auto" PreviewDragOver="RichTextBox_OnPreviewDragOver" Drop="RichTextBox_Drop"/>
+    </Grid>
+</Window>

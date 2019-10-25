@@ -1,0 +1,15 @@
+C:\Users\out-reutov-va\source\repos\FilterTextApplication\FilterTextApplication\obj\Debug\FilterTextApplication.csprojAssemblyReference.cache
+C:\Users\out-reutov-va\source\repos\FilterTextApplication\FilterTextApplication\obj\Debug\MainWindow.g.cs
+C:\Users\out-reutov-va\source\repos\FilterTextApplication\FilterTextApplication\obj\Debug\App.g.cs
+C:\Users\out-reutov-va\source\repos\FilterTextApplication\FilterTextApplication\obj\Debug\FilterTextApplication_MarkupCompile.cache
+C:\Users\out-reutov-va\source\repos\FilterTextApplication\FilterTextApplication\obj\Debug\FilterTextApplication_MarkupCompile.lref
+C:\Users\out-reutov-va\source\repos\FilterTextApplication\FilterTextApplication\bin\Debug\FilterTextApplication.exe.config
+C:\Users\out-reutov-va\source\repos\FilterTextApplication\FilterTextApplication\bin\Debug\FilterTextApplication.exe
+C:\Users\out-reutov-va\source\repos\FilterTextApplication\FilterTextApplication\bin\Debug\FilterTextApplication.pdb
+C:\Users\out-reutov-va\source\repos\FilterTextApplication\FilterTextApplication\obj\Debug\MainWindow.baml
+C:\Users\out-reutov-va\source\repos\FilterTextApplication\FilterTextApplication\obj\Debug\FilterTextApplication.g.resources
+C:\Users\out-reutov-va\source\repos\FilterTextApplication\FilterTextApplication\obj\Debug\FilterTextApplication.Properties.Resources.resources
+C:\Users\out-reutov-va\source\repos\FilterTextApplication\FilterTextApplication\obj\Debug\FilterTextApplication.csproj.GenerateResource.cache
+C:\Users\out-reutov-va\source\repos\FilterTextApplication\FilterTextApplication\obj\Debug\FilterTextApplication.csproj.CoreCompileInputs.cache
+C:\Users\out-reutov-va\source\repos\FilterTextApplication\FilterTextApplication\obj\Debug\FilterTextApplication.exe
+C:\Users\out-reutov-va\source\repos\FilterTextApplication\FilterTextApplication\obj\Debug\FilterTextApplication.pdb
