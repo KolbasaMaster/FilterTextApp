@@ -2,7 +2,6 @@ C:\Users\out-reutov-va\source\repos\FilterTextApplication\FilterTextApplication\
 C:\Users\out-reutov-va\source\repos\FilterTextApplication\FilterTextApplication\obj\Debug\MainWindow.g.cs
 C:\Users\out-reutov-va\source\repos\FilterTextApplication\FilterTextApplication\obj\Debug\App.g.cs
 C:\Users\out-reutov-va\source\repos\FilterTextApplication\FilterTextApplication\obj\Debug\FilterTextApplication_MarkupCompile.cache
-C:\Users\out-reutov-va\source\repos\FilterTextApplication\FilterTextApplication\obj\Debug\FilterTextApplication_MarkupCompile.lref
 C:\Users\out-reutov-va\source\repos\FilterTextApplication\FilterTextApplication\bin\Debug\FilterTextApplication.exe.config
 C:\Users\out-reutov-va\source\repos\FilterTextApplication\FilterTextApplication\bin\Debug\FilterTextApplication.exe
 C:\Users\out-reutov-va\source\repos\FilterTextApplication\FilterTextApplication\bin\Debug\FilterTextApplication.pdb

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.MemoryMappedFiles;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -15,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Win32;
+using System.IO.MemoryMappedFiles;
 
 namespace FilterTextApplication
 {
@@ -26,11 +28,13 @@ namespace FilterTextApplication
         private string _path;
         public List<string> Text = new List<string>();
         private StringWorker _stringWorker;
+        private CircularBuffer<string> _circularBuffer;
       
         public MainWindow()
         {
             InitializeComponent();
             _stringWorker = new StringWorker(this);
+            _circularBuffer = new CircularBuffer<string>(2);
         }
         
         private async void OpenFile(object sender, RoutedEventArgs e) 
@@ -45,16 +49,23 @@ namespace FilterTextApplication
             }
         }
 
+   
+        
         private async Task ReadFile()
         {
             using (FileStream fs = new FileStream(_path, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite))
             {
                 using (StreamReader sr = new StreamReader(fs, Encoding.GetEncoding(1251)))
                 {
-                    richTextBox.AppendText(sr.ReadToEnd());
+                    while (sr.Peek() != -1)
+                    {
+                        _circularBuffer.Enqueue(sr.ReadLine());                     
+                        richTextBox.AppendText(_circularBuffer.Dequeue() + '\n');
+                    }
                 }
             }
         }
+
 
         private void FilterButton_Click(object sender, RoutedEventArgs e)
         {
@@ -72,7 +83,9 @@ namespace FilterTextApplication
             {
                 textBox2.Clear();
                 textBox2.IsEnabled = false;
+                filterBox2.SelectedIndex = -1;
                 filterBox2.IsEnabled = false;
+                
             }
         }
 
@@ -87,6 +100,7 @@ namespace FilterTextApplication
             {
                 textBox3.Clear();
                 textBox3.IsEnabled = false;
+                filterBox3.SelectedIndex = -1;
                 filterBox3.IsEnabled = false;
             }
         }
@@ -102,7 +116,9 @@ namespace FilterTextApplication
             {
                 textBox4.Clear();
                 textBox4.IsEnabled = false;
+                filterBox4.SelectedIndex = -1;
                 filterBox4.IsEnabled = false;
+                
             }
         }
         public void RichTextBox_Drop(object sender, DragEventArgs e)

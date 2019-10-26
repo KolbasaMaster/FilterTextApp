@@ -66,6 +66,11 @@ namespace FilterTextApplication
                     bool accept = true;
                     foreach (var word in line)
                     {
+                        if (word.Length == 0)
+                        { 
+                            accept = false;
+                            break;
+                        }
                         accept = str.ToLower().Contains(word.ToLower()) && accept;
                     }
                     if (accept)
